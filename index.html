@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Cache" content="no-cache">
+        <title>计算毛利率</title>		
+    </head>
+    <body>
+        <div id="app">
+            <div>
+				<input class="money" type="text" placeholder="请输入菜钱">
+				<input class="turnover" type="text" placeholder="请输入营业额">
+				<button class="submit" onclick="clickHandler()">计算毛利率</button>
+				<div class="rate-box">
+					<span>毛利率为:</span>
+					<span class="tate-num"></span>
+				</div>
+			</div>
+		</div>
+		<script>
+			var submit = document.getElementsByClassName('submit')
+			
+			function clickHandler() {
+				var money = Number(document.getElementsByClassName('money')[0].value)
+				var turnover = Number(document.getElementsByClassName('turnover')[0].value)
+				var tateNum = document.getElementsByClassName('tate-num')[0]
+				console.log((turnover - money)/turnover *100)
+				tateNum.innerHTML = (turnover - money)/turnover *100 + '%'
+			}
+		</script>
+    </body>
+</html>
